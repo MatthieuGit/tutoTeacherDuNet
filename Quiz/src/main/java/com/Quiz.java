@@ -1,24 +1,33 @@
+package main.java.com;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Classe abstraite Quiz.
+ * Classe abstraite main.java.com.Quiz.
  */
 public abstract class Quiz {
 
+    /**
+     * Constante pour la mauvaise réponse
+     */
     public static final String MAUVAISE_REPONSE = "Mauvaise reponse. Il fallait répondre %s \n";
+    /**
+     * Constante pour la bonne réponse
+     */
     public static final String BONNE_REPONSE = "Bonne réponse ! ";
+    /**
+     * Constante pour la question
+     */
     public static final String QUESTION = "Quelle est la capitale de ce pays : %s ? \n";
 
+    /**
+     * main.java.com.CapitalCityQuestionsGenerator
+     */
     private CapitalCityQuestionsGenerator capitalCityQuestionsGenerator;
 
-    /**
-     * Lieu d'emplacement du fichier à parser.
-     */
-    private static final String EMPLACEMENT_DU_FICHIER =
-            "C:\\Users\\matth\\Downloads\\"
-                    + "liste_des_capitales_nationales-1012j.csv";
+
     /**
      * HashMap contenant les capitales et les villes.
      */

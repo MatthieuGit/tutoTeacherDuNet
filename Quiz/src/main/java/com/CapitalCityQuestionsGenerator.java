@@ -1,7 +1,8 @@
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+package main.java.com;
+
+import main.java.com.TransformeCSV;
+
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,9 +17,7 @@ public class CapitalCityQuestionsGenerator {
     /**
      * Lieu d'emplacement du fichier à parser.
      */
-    private static final String EMPLACEMENT_DU_FICHIER =
-            "C:\\Users\\matth\\Downloads\\"
-                    + "liste_des_capitales_nationales-1012j.csv";
+    private static final String EMPLACEMENT_DU_FICHIER = "liste_des_capitales_nationales-1012j.csv";
     /**
      * HashMap contenant les capitales et les villes.
      */
@@ -49,7 +48,6 @@ public class CapitalCityQuestionsGenerator {
 
     /**
      * Retourne une hashmap de {Pays,Capital}. Dont la taille est choisie par l'utilisateur.
-     * @param nombreDeQuestionChoisitParUtilisateur entier .
      * @return paysCapital
      */
     public HashMap<String, String> initValue() {
@@ -76,10 +74,10 @@ public class CapitalCityQuestionsGenerator {
      * Parcours un fichier en entrée, et retourne une map de capitale et ville.
      * @return mapCapitaleEtVille.
      */
-    public static HashMap<String, String> getCapitaleEtVille() {
+    public HashMap<String, String> getCapitaleEtVille() {
         //recuperer emplacement du fichier
         try {
-            InputStream flux = new FileInputStream(EMPLACEMENT_DU_FICHIER);
+            InputStream flux = new FileInputStream(CapitalCityQuestionsGenerator.class.getResource(EMPLACEMENT_DU_FICHIER).getFile());
             InputStreamReader lecture = new InputStreamReader(flux);
             BufferedReader buff = new BufferedReader(lecture);
             String ligne;
